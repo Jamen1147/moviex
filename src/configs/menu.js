@@ -1,5 +1,5 @@
 export const ROUTE_ITEMS = {
-	HOME: '/',
+	HOME: '/home',
 	IN_CINEMAS: '/movie/in_cinemas',
 	UP_COMING: '/movie/up_comings',
 	POPULAR: '/movie/popular',
