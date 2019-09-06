@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/moviex/static/js/main.1cabe7e9.chunk.js",
-    "main.js.map": "/moviex/static/js/main.1cabe7e9.chunk.js.map",
+    "main.js": "/moviex/static/js/main.cb1fd1df.chunk.js",
+    "main.js.map": "/moviex/static/js/main.cb1fd1df.chunk.js.map",
     "runtime~main.js": "/moviex/static/js/runtime~main.7ae10a32.js",
     "runtime~main.js.map": "/moviex/static/js/runtime~main.7ae10a32.js.map",
     "static/js/2.030ade4f.chunk.js": "/moviex/static/js/2.030ade4f.chunk.js",
     "static/js/2.030ade4f.chunk.js.map": "/moviex/static/js/2.030ade4f.chunk.js.map",
     "index.html": "/moviex/index.html",
-    "precache-manifest.d0b76f6b27e8756057451352e56a4bdd.js": "/moviex/precache-manifest.d0b76f6b27e8756057451352e56a4bdd.js",
+    "precache-manifest.03e1d713ec19aaae81126b4c733a3d35.js": "/moviex/precache-manifest.03e1d713ec19aaae81126b4c733a3d35.js",
     "service-worker.js": "/moviex/service-worker.js"
   }
 }

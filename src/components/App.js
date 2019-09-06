@@ -33,6 +33,8 @@ export default () => {
 		);
 	};
 
+	console.log('d?');
+
 	return (
 		<Router history={history} basename={process.env.PUBLIC_URL}>
 			<ResponsiveContainer>
