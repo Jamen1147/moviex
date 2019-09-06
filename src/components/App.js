@@ -33,6 +33,8 @@ export default () => {
 		);
 	};
 
+	history.push('/');
+
 	return (
 		<Router history={history}>
 			<ResponsiveContainer>
