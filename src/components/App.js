@@ -33,10 +33,8 @@ export default () => {
 		);
 	};
 
-	history.push('/');
-
 	return (
-		<Router history={history}>
+		<Router history={history} basename={process.env.PUBLIC_URL}>
 			<ResponsiveContainer>
 				<Switch>
 					<Route path={`${ROUTE_ITEMS.HOME}`} exact component={Home} />
