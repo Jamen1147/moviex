@@ -33,8 +33,6 @@ export default () => {
 		);
 	};
 
-	console.log('d?');
-
 	return (
 		<Router history={history}>
 			<ResponsiveContainer>
