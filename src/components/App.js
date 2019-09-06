@@ -36,7 +36,7 @@ export default () => {
 	console.log('d?');
 
 	return (
-		<Router history={history} basename={process.env.PUBLIC_URL}>
+		<Router history={history}>
 			<ResponsiveContainer>
 				<Switch>
 					<Route path={`${ROUTE_ITEMS.HOME}`} exact component={Home} />
