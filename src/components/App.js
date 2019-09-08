@@ -7,7 +7,7 @@ import { ROUTE_ITEMS } from '../configs/menu';
 
 import Footer from './Footer';
 import ResponsiveContainer from './ResponsiveContainer';
-import { Header, Icon } from 'semantic-ui-react';
+import { Header, Icon, Container } from 'semantic-ui-react';
 
 import Home from './pages/Home';
 import Detail from './pages/Detail';
@@ -15,21 +15,17 @@ import InCinemas from './pages/InCinemas';
 import UpComing from './pages/UpComing';
 import Popular from './pages/Popular';
 import TopRated from './pages/TopRated';
+import More from './pages/More';
 
 export default () => {
-	const scrollToTop = () =>
-		window.scrollTo({
-			top: 0,
-			left: 0,
-			behavior: 'smooth'
-		});
-
 	const Logo = () => {
 		return (
-			<Header inverted as="h2" icon style={{ marginTop: 0 }} onClick={scrollToTop}>
-				<Icon name="film" />
-				R-MovieX
-			</Header>
+			<Container>
+				<Header inverted as="h3" icon style={{ marginTop: 0 }} onClick={() => history.push(ROUTE_ITEMS.HOME)}>
+					<Icon name="film" size="tiny" />
+					R-MovieX
+				</Header>
+			</Container>
 		);
 	};
 
@@ -43,6 +39,7 @@ export default () => {
 					<Route path={`${ROUTE_ITEMS.TOP_RATED}`} exact component={TopRated} />
 					<Route path={`${ROUTE_ITEMS.UP_COMING}`} exact component={UpComing} />
 					<Route path={`${ROUTE_ITEMS.DETAIL}`} exact component={Detail} />
+					<Route path={`${ROUTE_ITEMS.MORE}`} exact component={More} />
 				</Switch>
 				<Footer
 					col1Items={FOOTER_LIST.tech}

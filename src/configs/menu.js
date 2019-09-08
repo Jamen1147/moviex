@@ -4,7 +4,7 @@ export const ROUTE_ITEMS = {
 	UP_COMING: '/movie/up_comings',
 	POPULAR: '/movie/popular',
 	TOP_RATED: '/movie/top_rated',
-	DETAIL: '/movie/:id',
+	DETAIL: '/movie/:id/:endPoint',
 	MORE: '/explore'
 };
 

@@ -13,6 +13,14 @@ export const FOOTER_LIST = {
 			{
 				name: 'TMDB API',
 				url: 'https://www.themoviedb.org/documentation/api?language=en-US'
+			},
+			{
+				name: 'React Item Carousel',
+				url: 'https://www.npmjs.com/package/react-items-carousel'
+			},
+			{
+				name: 'React Redux',
+				url: 'https://react-redux.js.org/'
 			}
 		]
 	}

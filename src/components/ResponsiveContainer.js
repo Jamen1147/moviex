@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import DesktopContainer from './DesktopContainer';
 import MobileContainer from './MobileContainer';
-import { MENU_ITEMS } from '../configs/menu';
+import { MENU_ITEMS, ROUTE_ITEMS } from '../configs/menu';
 import { END_POINTS, KEYS } from '../configs/keys';
 import { fetchMovies } from '../redux/actions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 const random = Math.floor(Math.random() * 10);
 
@@ -15,16 +16,29 @@ const ResponsiveContainer = ({ children, ...props }) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	const { pathname } = props.location;
+	const shouldShowBigHeader = pathname === ROUTE_ITEMS.HOME;
+
 	if (props.movies.length >= 1) {
 		const imgNum = props.movies.length > random ? random : 0;
 		const deskImg = `${KEYS.TMDB.IMG_URL_HIGH}${props.movies[imgNum].poster_path}`;
 		const mobileImg = `${KEYS.TMDB.IMG_URL_MID}${props.movies[imgNum].poster_path}`;
 		return (
 			<div>
-				<DesktopContainer menuItems={MENU_ITEMS} imgSrc={deskImg}>
+				<DesktopContainer
+					menuItems={MENU_ITEMS}
+					imgSrc={deskImg}
+					currentRoute={pathname}
+					shouldShowBigHeader={shouldShowBigHeader}
+				>
 					{children}
 				</DesktopContainer>
-				<MobileContainer menuItems={MENU_ITEMS} imgSrc={mobileImg}>
+				<MobileContainer
+					menuItems={MENU_ITEMS}
+					imgSrc={mobileImg}
+					currentRoute={pathname}
+					shouldShowBigHeader={shouldShowBigHeader}
+				>
 					{children}
 				</MobileContainer>
 			</div>
@@ -33,8 +47,12 @@ const ResponsiveContainer = ({ children, ...props }) => {
 
 	return (
 		<div>
-			<DesktopContainer menuItems={MENU_ITEMS}>{children}</DesktopContainer>
-			<MobileContainer menuItems={MENU_ITEMS}>{children}</MobileContainer>
+			<DesktopContainer menuItems={MENU_ITEMS} currentRoute={pathname} shouldShowBigHeader={shouldShowBigHeader}>
+				{children}
+			</DesktopContainer>
+			<MobileContainer menuItems={MENU_ITEMS} currentRoute={pathname} shouldShowBigHeader={shouldShowBigHeader}>
+				{children}
+			</MobileContainer>
 		</div>
 	);
 };
@@ -49,4 +67,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, { fetchMovies })(ResponsiveContainer);
+export default connect(mapStateToProps, { fetchMovies })(withRouter(ResponsiveContainer));

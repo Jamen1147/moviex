@@ -19,7 +19,7 @@ const SlideSection = ({ margin, sectionTitle, endPoint, ...props }) => {
 		return movies.map((movie, i) => {
 			return (
 				<div key={i}>
-					<Link to={`/movie/${movie.id}`}>
+					<Link to={`/movie/${movie.id}/${endPoint.substring(1, endPoint.length)}`}>
 						<Image src={`${KEYS.TMDB.IMG_URL}${movie.poster_path}`} size="medium" rounded bordered />
 					</Link>
 				</div>

@@ -36,6 +36,17 @@ export default function Footer({ col1Items, col2Items, longContent, logo, logoTe
 								{longContent.header}
 							</Header>
 							<p>{longContent.content}</p>
+							<p>
+								Note: Any hard refreshes on routes that are not the default route (Home) will lead to
+								404. For more info please check out this{' '}
+								<a
+									href="https://itnext.io/so-you-want-to-host-your-single-age-react-app-on-github-pages-a826ab01e48"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									Article
+								</a>{' '}
+							</p>
 						</Grid.Column>
 					</Grid.Row>
 				</Grid>

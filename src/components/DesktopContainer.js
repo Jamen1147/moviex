@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import HomepageHeading from './HomepageHeading';
 import { Container, Menu, Responsive, Segment, Visibility, Icon } from 'semantic-ui-react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const DesktopContainer = ({ children, menuItems, imgSrc, ...props }) => {
+const DesktopContainer = ({ children, menuItems, imgSrc, currentRoute, shouldShowBigHeader }) => {
 	const [ fixed, setFixed ] = useState(false);
 
 	const hideFixedMenu = () => setFixed(false);
@@ -25,7 +25,7 @@ const DesktopContainer = ({ children, menuItems, imgSrc, ...props }) => {
 	const renderMenuItems = () => {
 		return menuItems.map((item, i) => {
 			return (
-				<Menu.Item key={i} active={props.location.pathname === item.link}>
+				<Menu.Item key={i} active={currentRoute === item.link}>
 					<Link to={item.link}>{item.name}</Link>
 				</Menu.Item>
 			);
@@ -43,7 +43,7 @@ const DesktopContainer = ({ children, menuItems, imgSrc, ...props }) => {
 	};
 
 	const renderBackgroundImage = () => {
-		if (imgSrc) {
+		if (imgSrc && shouldShowBigHeader) {
 			return (
 				<Segment
 					style={{
@@ -71,7 +71,7 @@ const DesktopContainer = ({ children, menuItems, imgSrc, ...props }) => {
 					inverted
 					textAlign="center"
 					style={{
-						minHeight: 700,
+						minHeight: shouldShowBigHeader ? 700 : 75,
 						padding: '1em oem',
 						borderRadius: '0px',
 						opacity: fixed ? 1 : 0.9,
@@ -91,7 +91,7 @@ const DesktopContainer = ({ children, menuItems, imgSrc, ...props }) => {
 							{renderUpBtn()}
 						</Container>
 					</Menu>
-					<HomepageHeading />
+					{shouldShowBigHeader ? <HomepageHeading /> : ''}
 				</Segment>
 			</Visibility>
 			{children}
@@ -107,7 +107,9 @@ DesktopContainer.propTypes = {
 			link: PropTypes.string.isRequired
 		}).isRequired
 	).isRequired,
-	imgSrc: PropTypes.string
+	imgSrc: PropTypes.string,
+	currentRoute: PropTypes.string.isRequired,
+	shouldShowBigHeader: PropTypes.bool.isRequired
 };
 
-export default withRouter(DesktopContainer);
+export default DesktopContainer;

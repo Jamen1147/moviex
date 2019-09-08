@@ -26,10 +26,10 @@ export default function HomepageHeading({ isMobile }) {
 					marginTop: isMobile ? '0.5em' : '1.5em'
 				}}
 			/>
-			{/* <Button primary size="huge" style={{ marginTop: 25 }}>
+			<Button primary size="huge" style={{ marginTop: 25 }}>
 				Explore
 				<Icon name="right arrow" />
-			</Button> */}
+			</Button>
 		</Container>
 	);
 }

@@ -4,7 +4,7 @@ import HomepageHeading from './HomepageHeading';
 import { Container, Icon, Menu, Responsive, Segment, Sidebar } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-export default function MobileContainer({ children, menuItems, imgSrc }) {
+export default function MobileContainer({ children, menuItems, imgSrc, currentRoute, shouldShowBigHeader }) {
 	const [ sidebarOpened, setSidebar ] = useState(false);
 
 	const hideSidebar = () => setSidebar(false);
@@ -18,7 +18,7 @@ export default function MobileContainer({ children, menuItems, imgSrc }) {
 	const renderMenuItems = () => {
 		return menuItems.map((item, i) => {
 			return (
-				<Menu.Item as="a" active={i === 0} key={i}>
+				<Menu.Item active={currentRoute === item.link} key={i}>
 					<Link to={item.link}>{item.name}</Link>
 				</Menu.Item>
 			);
@@ -26,7 +26,7 @@ export default function MobileContainer({ children, menuItems, imgSrc }) {
 	};
 
 	const renderBackgroundImage = () => {
-		if (imgSrc) {
+		if (imgSrc && shouldShowBigHeader) {
 			return (
 				<Segment
 					style={{
@@ -57,7 +57,7 @@ export default function MobileContainer({ children, menuItems, imgSrc }) {
 					inverted
 					textAlign="center"
 					style={{
-						minHeight: 350,
+						minHeight: shouldShowBigHeader ? 350 : 75,
 						padding: '1em 0em',
 						borderRadius: '0px',
 						opacity: 0.9,
@@ -73,7 +73,7 @@ export default function MobileContainer({ children, menuItems, imgSrc }) {
 							</Menu.Item>
 						</Menu>
 					</Container>
-					<HomepageHeading isMobile />
+					{shouldShowBigHeader ? <HomepageHeading isMobile /> : ''}
 				</Segment>
 				{children}
 			</Sidebar.Pusher>
@@ -89,5 +89,7 @@ MobileContainer.propTypes = {
 			link: PropTypes.string.isRequired
 		}).isRequired
 	).isRequired,
-	imgSrc: PropTypes.string
+	imgSrc: PropTypes.string,
+	currentRoute: PropTypes.string.isRequired,
+	shouldShowBigHeader: PropTypes.bool.isRequired
 };
