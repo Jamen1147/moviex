@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/moviex/static/js/main.3c0e6eed.chunk.js",
-    "main.js.map": "/moviex/static/js/main.3c0e6eed.chunk.js.map",
+    "main.js": "/moviex/static/js/main.2ce6d31c.chunk.js",
+    "main.js.map": "/moviex/static/js/main.2ce6d31c.chunk.js.map",
     "runtime~main.js": "/moviex/static/js/runtime~main.7ae10a32.js",
     "runtime~main.js.map": "/moviex/static/js/runtime~main.7ae10a32.js.map",
-    "static/js/2.030ade4f.chunk.js": "/moviex/static/js/2.030ade4f.chunk.js",
-    "static/js/2.030ade4f.chunk.js.map": "/moviex/static/js/2.030ade4f.chunk.js.map",
+    "static/js/2.659992b4.chunk.js": "/moviex/static/js/2.659992b4.chunk.js",
+    "static/js/2.659992b4.chunk.js.map": "/moviex/static/js/2.659992b4.chunk.js.map",
     "index.html": "/moviex/index.html",
-    "precache-manifest.cf1ded3f9bee99b62c0cd56487efd918.js": "/moviex/precache-manifest.cf1ded3f9bee99b62c0cd56487efd918.js",
+    "precache-manifest.291a2a422daefdd1732fe0ef2c21d7f4.js": "/moviex/precache-manifest.291a2a422daefdd1732fe0ef2c21d7f4.js",
     "service-worker.js": "/moviex/service-worker.js"
   }
 }
