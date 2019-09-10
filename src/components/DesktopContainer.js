@@ -79,13 +79,7 @@ const DesktopContainer = ({ children, menuItems, imgSrc, currentRoute, shouldSho
 					}}
 				>
 					{renderBackgroundImage()}
-					<Menu
-						fixed={fixed ? 'top' : null}
-						inverted={!fixed}
-						pointing={!fixed}
-						secondary={!fixed}
-						size="large"
-					>
+					<Menu fixed={fixed ? 'top' : null} inverted pointing={!fixed} secondary={!fixed} size="large">
 						<Container>
 							{renderMenuItems()}
 							{renderUpBtn()}

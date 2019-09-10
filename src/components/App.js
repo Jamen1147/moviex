@@ -7,7 +7,7 @@ import { ROUTE_ITEMS } from '../configs/menu';
 
 import Footer from './Footer';
 import ResponsiveContainer from './ResponsiveContainer';
-import { Header, Icon, Container } from 'semantic-ui-react';
+import { Header, Icon } from 'semantic-ui-react';
 
 import Home from './pages/Home';
 import Detail from './pages/Detail';
@@ -20,12 +20,13 @@ import More from './pages/More';
 export default () => {
 	const Logo = () => {
 		return (
-			<Container>
-				<Header inverted as="h3" icon style={{ marginTop: 0 }} onClick={() => history.push(ROUTE_ITEMS.HOME)}>
-					<Icon name="film" size="tiny" />
+			<div>
+				<Icon name="film" size="big" />
+				<br />
+				<Header as="h2" inverted icon style={{ marginTop: 0 }}>
 					R-MovieX
 				</Header>
-			</Container>
+			</div>
 		);
 	};
 

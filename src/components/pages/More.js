@@ -1,10 +1,10 @@
 import React from 'react';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Header } from 'semantic-ui-react';
 
 export default function UpComing() {
 	return (
-		<Segment vertical style={{ padding: '8em 0em' }}>
-			More
+		<Segment textAlign="center" vertical style={{ padding: '16em 0em' }}>
+			<Header as="h2">More to come ...</Header>
 		</Segment>
 	);
 }
