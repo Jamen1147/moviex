@@ -17,6 +17,8 @@ import Popular from './pages/Popular';
 import TopRated from './pages/TopRated';
 import More from './pages/More';
 
+import NotFound404 from './pages/NotFound404';
+
 export default () => {
 	const Logo = () => {
 		return (
@@ -41,6 +43,7 @@ export default () => {
 					<Route path={`${ROUTE_ITEMS.UP_COMING}`} exact component={UpComing} />
 					<Route path={`${ROUTE_ITEMS.DETAIL}`} exact component={Detail} />
 					<Route path={`${ROUTE_ITEMS.MORE}`} exact component={More} />
+					<Route path="*" exact component={NotFound404} />
 				</Switch>
 				<Footer
 					col1Items={FOOTER_LIST.tech}

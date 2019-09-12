@@ -70,9 +70,12 @@ const Detail = (props) => {
 
 	return (
 		<Segment vertical style={{ padding: '5em 0em' }}>
-			<Segment inverted vertical style={{ padding: '3em 0em', opacity: '0.9', minHeight: 500 }}>
-				Loading..
-			</Segment>
+			<Segment
+				loading={!props.movie}
+				inverted
+				vertical
+				style={{ padding: '3em 0em', opacity: '0.9', minHeight: 500 }}
+			/>
 		</Segment>
 	);
 };

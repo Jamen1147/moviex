@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Divider, Container, Image, Button } from 'semantic-ui-react';
+import { Divider, Container, Image, Button, Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchMovies } from '../redux/actions';
@@ -60,8 +60,12 @@ const SlideSection = ({ margin, sectionTitle, endPoint, ...props }) => {
 			<Divider as="h4" className="header" horizontal style={{ margin: '2em 0em', textTransform: 'uppercase' }}>
 				{sectionTitle}
 			</Divider>
-			{renderCardsSlider(props.movies)}
-			<Button style={{ marginTop: 20 }} basic color="black" as="a" size="small" content="More" />
+			<Segment loading={props.movies.length === 0} vertical>
+				{renderCardsSlider(props.movies)}
+			</Segment>
+			<Link to={`/movie${endPoint}`}>
+				<Button basic style={{ marginTop: 20 }} color="black" size="small" content="More" />
+			</Link>
 		</Container>
 	);
 };

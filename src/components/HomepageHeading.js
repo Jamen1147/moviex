@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Container, Header, Icon } from 'semantic-ui-react';
+import { ROUTE_ITEMS } from '../configs/menu';
+import { Link } from 'react-router-dom';
 
 export default function HomepageHeading({ isMobile }) {
 	return (
@@ -26,10 +28,12 @@ export default function HomepageHeading({ isMobile }) {
 					marginTop: isMobile ? '0.5em' : '1.5em'
 				}}
 			/>
-			<Button primary size="huge" style={{ marginTop: 25 }}>
-				Explore
-				<Icon name="right arrow" />
-			</Button>
+			<Link to={ROUTE_ITEMS.MORE}>
+				<Button primary size="huge" style={{ marginTop: 25 }}>
+					Explore
+					<Icon name="right arrow" />
+				</Button>
+			</Link>
 		</Container>
 	);
 }

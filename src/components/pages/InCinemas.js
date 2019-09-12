@@ -13,11 +13,7 @@ const InCinemas = (props) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	if (props.movies) {
-		return <MovieSegment movies={props.movies} segmentTitle="In Cinemas" endPoint={END_POINTS.TMDB.NOW_PLAYING} />;
-	}
-
-	return <Segment loading style={{ padding: '8em 2em' }} />;
+	return <MovieSegment movies={props.movies} segmentTitle="In Cinemas" endPoint={END_POINTS.TMDB.NOW_PLAYING} />;
 };
 
 const mapStateToProps = (state) => {

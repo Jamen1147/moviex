@@ -38,9 +38,11 @@ export default function MovieSegment({ movies, segmentTitle, endPoint }) {
 			>
 				{segmentTitle}
 			</Divider>
-			<Grid>
-				<Grid.Row>{renderColumns(movies)}</Grid.Row>
-			</Grid>
+			<Segment vertical loading={movies.length === 0}>
+				<Grid>
+					<Grid.Row>{renderColumns(movies)}</Grid.Row>
+				</Grid>
+			</Segment>
 		</Segment>
 	);
 }
