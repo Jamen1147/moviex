@@ -1,6 +1,8 @@
 import React from 'react';
 import { Segment, Header, Button, Icon } from 'semantic-ui-react';
-import bg from '../../img/page404.jpg';
+import Animation from '../Animation';
+import bg from '../../assets/img/page404.jpg';
+import warning from '../../assets/animations/warning.json';
 
 export default function NotFound404() {
 	return (
@@ -32,8 +34,12 @@ export default function NotFound404() {
 					</p>
 				</Header>
 
+				<span >
+					<Animation source={warning} width={160} />
+				</span>
+
 				<Button as="a" href="https://www.disney.com.au/" inverted color="red">
-					Go Home
+					Run Away
 				</Button>
 			</Segment>
 		</React.Fragment>

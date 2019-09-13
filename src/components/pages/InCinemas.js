@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Segment } from 'semantic-ui-react';
 
 import { fetchMovies } from '../../redux/actions';
 import { END_POINTS } from '../../configs/keys';

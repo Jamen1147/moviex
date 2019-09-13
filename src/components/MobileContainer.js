@@ -6,9 +6,14 @@ import { Link } from 'react-router-dom';
 
 export default function MobileContainer({ children, menuItems, imgSrc, currentRoute, shouldShowBigHeader }) {
 	const [ sidebarOpened, setSidebar ] = useState(false);
+	const [ visible, setVisible ] = useState(false);
 
 	const hideSidebar = () => setSidebar(false);
-	const showSidebar = () => setSidebar(true);
+
+	const showSidebar = () => {
+		setSidebar(true);
+		setVisible(true);
+	};
 
 	const getWidth = () => {
 		const isSSR = typeof window === 'undefined';
@@ -47,12 +52,19 @@ export default function MobileContainer({ children, menuItems, imgSrc, currentRo
 		}
 	};
 
+	const manualHide = () => {
+		if (visible) {
+			hideSidebar();
+			setVisible(false);
+		}
+	};
+
 	return (
 		<Responsive as={Sidebar.Pushable} getWidth={getWidth} maxWidth={Responsive.onlyMobile.maxWidth}>
 			<Sidebar as={Menu} animation="push" inverted onHide={hideSidebar} vertical visible={sidebarOpened}>
 				{renderMenuItems()}
 			</Sidebar>
-			<Sidebar.Pusher dimmed={sidebarOpened}>
+			<Sidebar.Pusher dimmed={visible} onClick={() => manualHide()}>
 				<Segment
 					inverted
 					textAlign="center"
