@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3d68902536f8976a87a0a398a3493ea9",
+    "revision": "fd0bc437d414ef7487ca78e039987c79",
     "url": "/moviex/index.html"
   },
   {
-    "revision": "b076b75d5a18c7e76cdf",
-    "url": "/moviex/static/js/2.3a618731.chunk.js"
+    "revision": "5187a8c9970128779b23",
+    "url": "/moviex/static/js/2.40c7cc5f.chunk.js"
   },
   {
-    "revision": "946a79c94bdf60375c8a",
-    "url": "/moviex/static/js/main.763ced23.chunk.js"
+    "revision": "d35eb35613d3d1d6afe3",
+    "url": "/moviex/static/js/main.4c170bb5.chunk.js"
   },
   {
     "revision": "dd2bc556b4720c920cee",
