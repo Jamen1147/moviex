@@ -1,4 +1,4 @@
-/movie/now_playing /movie/now_playing
+/movie/now_playing /index.html/movie/now_playing 200
 /movie/upcoming /movie/upcoming
 /movie/popular /movie/popular
 /movie/top_rated /movie/top_rated
